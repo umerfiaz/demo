@@ -1,0 +1,82 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+<mat-card  fxFlex>
+  <div *ngIf="dish" [@expand] >
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{dish.name | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{baseURL + dish.image}}" alt={{dish.name}}>
+    <mat-card-content>
+      <p>{{dish.description}}
+      </p>
+    </mat-card-content>
+  </div>
+  
+  <div [hidden]="dish || errMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess && !dish">
+    <h2 class="redc">Error</h2>
+    <h4 class="redc">{{errMess}}</h4>
+  </div>
+</mat-card>
+
+
+
+<mat-card fxFlex>
+  <div *ngIf="promotion" [@expand] >
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{promotion.name | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{baseURL + promotion.image}}" alt={{promotion.name}}>
+    <mat-card-content>
+      <p>{{promotion.description}}
+      </p>
+    </mat-card-content>
+  </div>
+  
+  <div [hidden]="promotion || errMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess && !promotion">
+    <h2 class="redc">Error</h2>
+    <h4 class="redc">{{errMess}}</h4>
+  </div>
+</mat-card>
+<mat-card  fxFlex>
+  <div *ngIf="leader" [@expand] >
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{leader.name | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{baseURL +leader.image}}" alt={{leader.name}}>
+    <mat-card-content>
+      <h5>{{leader.designation}}</h5>
+      <p>{{leader.description}}
+      </p>
+    </mat-card-content>
+  </div>
+  
+  <div [hidden]="leader || errMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess && !leader">
+    <h2 class="redc">Error</h2>
+    <h4 class="redc">{{errMess}}</h4>
+  </div>
+</mat-card>
+
+</div>

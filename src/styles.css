@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* some basic resets */
+@import '../node_modules/font-awesome/css/font-awesome.css';
+body { 
+  padding: 0; 
+  margin: 0; 
+  font-family: Roboto, sans-serif; 
+  
+}
+.redc{
+  font-size: large;
+  color: red;
+  font-style: inherit;
+  text-decoration: underline;
+}
+.grec{
+  font-size: large;
+  color:green;
+  font-style: inherit;
+  text-decoration: underline;
+}
+.container {
+  margin: 20px;
+  display:flex;
+}
+.background-primary {
+  background-color: #512DA8!important;
+}
+.background-accent {
+  background-color: #FFC107!important;
+}
+.text-floral-white {
+  color: floralwhite!important;
+}
+
+.flex-spacer {
+flex: 1 1 auto;
+}
+.highlight {
+  background-color: paleturquoise;
+  border: 3px solid blue;
+  z-index: 1;
+  transform: scale(1.2);
+}
